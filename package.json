@@ -11,11 +11,20 @@
   },
   "dependencies": {
     "@blueprintjs/core": "^6.1.0",
+    "@tanstack/query-core": "^5.85.5",
+    "@tanstack/react-query": "^5.85.3",
+    "@turf/turf": "^7.2.0",
+    "jotai": "^2.13.1",
+    "jotai-location": "^0.6.1",
+    "jotai-tanstack-query": "^0.11.0",
+    "mapbox-choropleth": "^0.16.0",
+    "mapbox-gl": "^3.14.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@tanstack/eslint-plugin-query": "^5.83.1",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^5.0.0",
