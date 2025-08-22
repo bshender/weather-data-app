@@ -2,7 +2,7 @@
 
 Quick little practice run.
 
-To make it work you'll need to add your mapbox token to a `.env` file as `VITE_MAPBOX_ACCESS_TOKEN`. You can get one for free here: [https://www.mapbox.com].
+To make it work you'll need to add your mapbox token to a `.env` file as `VITE_MAPBOX_ACCESS_TOKEN`. You can get one for free here: https://www.mapbox.com.
 
 The website is simple enough. Click anywhere in the US on the map and you'll get some data about that location curtesy of the good people at NWS and NOAA. Along with the 7 day forecast.
 
