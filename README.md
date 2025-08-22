@@ -1,6 +1,6 @@
 # Weather Data Website
 
-Quick little practice run. 
+Quick little practice run.
 
 To make it work you'll need to add your mapbox token to a `.env` file as `VITE_MAPBOX_ACCESS_TOKEN`. You can get one for free here: [https://www.mapbox.com].
 

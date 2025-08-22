@@ -1,3 +1,3 @@
-import ObservationDrawer from "./WeatherObservationDrawer"
+import ObservationDrawer from "./WeatherObservationDrawer";
 
-export default ObservationDrawer
+export default ObservationDrawer;
