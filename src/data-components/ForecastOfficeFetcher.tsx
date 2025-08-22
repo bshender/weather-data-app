@@ -8,11 +8,12 @@ interface iProps {
 }
 
 function ForecastOfficeFetcher({ children, officeUrl }: iProps) {
-    const { data, isLoading, error } = useQuery<unknown, Error, OfficeResponse, string[]>({
+    const { data, isLoading, error } = useQuery({
         queryKey: ["forecastOffice", officeUrl],
         queryFn: async ({ queryKey: [, officeUrl] }) => {
             const res = await fetch(officeUrl)
-            return res.json()
+            const data: OfficeResponse = await res.json()
+            return [data, res.status] as const
         }
     })
 
@@ -20,7 +21,16 @@ function ForecastOfficeFetcher({ children, officeUrl }: iProps) {
         errorHandler(error)
     }
 
-    return children(data, isLoading)
+    const res = data?.[0]
+    const status = data?.[1] || 0
+
+    if (status >= 400) {
+        // @ts-expect-error The error response has a title field, but the success response does not
+        errorHandler(Error(res?.title || "Unknown Error")) 
+        return children(undefined, isLoading)
+    }
+
+    return children(res, isLoading)
 }
 
 export default ForecastOfficeFetcher

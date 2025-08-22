@@ -13,10 +13,12 @@ export default tseslint.config([
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-      tanstack.configs.recommended,
     ],
+    plugins: {
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+      "tanstack": tanstack
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,

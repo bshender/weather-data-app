@@ -1,6 +1,6 @@
-import { Card, Classes, Elevation } from "@blueprintjs/core";
-import ActionLine from "../SharedComponents/ActionLine";
-import ForecastOfficeFetcher from "../DataComponents/ForecastOfficeFetcher";
+import { Card, Classes } from "@blueprintjs/core";
+import ActionLine from "../shared-components/ActionLine";
+import ForecastOfficeFetcher from "../data-components/ForecastOfficeFetcher";
 
 interface iProps {
     officeUrl: string
@@ -16,7 +16,7 @@ function ForecastOffice({ officeUrl }: iProps) {
                     const mapurl = `https://maps.apple.com/?address=${encodeURIComponent(placeQuery)}`
 
                     return (
-                        <Card elevation={Elevation.TWO} className={isLoading ? Classes.SKELETON : ""}>
+                        <Card className={isLoading ? Classes.SKELETON : ""}>
                             <b>Local Weather Office</b><br />
                             <ActionLine iconName="globe" url={mapurl} text={<div>
                                 {address?.streetAddress}<br />

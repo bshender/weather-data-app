@@ -1,69 +1,13 @@
-# React + TypeScript + Vite
+# Weather Data Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Quick little practice run. 
 
-Currently, two official plugins are available:
+To make it work you'll need to add your mapbox token to a `.env` file as `VITE_MAPBOX_ACCESS_TOKEN`. You can get one for free here: [https://www.mapbox.com].
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The website is simple enough. Click anywhere in the US on the map and you'll get some data about that location curtesy of the good people at NWS and NOAA. Along with the 7 day forecast.
 
-## Expanding the ESLint configuration
+If you request the stations, the website will load a layer with all the local weather tracking stations. You might need to zoom out. If you click one a bottom drawer will slide out showing the last 24 hours of temperature, wind speed, and rel humidity recorded by that station.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+So there you go, nothing fussy. Just a little MapBox and HighCharts magic on top of the NWS api.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![Screenshot of the website](./screenshot.png)

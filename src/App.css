@@ -18,13 +18,22 @@
   max-width: 500px;
 }
 
+.non-ideal-state-component {
+  h4 {
+    color: white;
+  }
+
+  path {
+    stroke: white;
+  }
+}
+
 #right-sidebar {
   background-color: rgb(35 55 75 / 90%);
   color: #fff;
   padding: 6px 12px;
   font-family: monospace;
   z-index: 1;
-  margin: 12px;
   border-radius: 4px;
   height: auto;
   width: 500px;
@@ -32,18 +41,28 @@
 
   .bp6-card {
     background-color: inherit;
+    flex-direction: column;
   }
 
   .pt-text-box {
     width: 100%;
+
     div {
       display: flex;
       justify-content: space-between;
     }
+
+    margin-bottom: 15px;
   }
 
   .forecast-container {
     width: 100%;
+
+    b {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
 
     .bp6-heading {
       color: inherit;
@@ -65,36 +84,4 @@
       }
     }
   }
-}
-
-.sidebar {
-  background-color: rgb(35 55 75 / 90%);
-  color: #fff;
-  padding: 6px 12px;
-  font-family: monospace;
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 12px;
-  border-radius: 4px;
-}
-
-.reset-button {
-  position: absolute;
-  top: 50px;
-  z-index: 1;
-  left: 12px;
-  padding: 4px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.flag-marker {
-  background-image: url('/src/assets/flag.svg');
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
 }

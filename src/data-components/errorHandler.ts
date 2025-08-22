@@ -1,4 +1,6 @@
-import overlayToaster from "../SharedComponents/OverlayToaster"
+import { OverlayToaster } from "@blueprintjs/core";
+
+const overlayToaster = await OverlayToaster.create({ position: "bottom" })
 
 function errorHandler(error: Error) {
     console.error(error)

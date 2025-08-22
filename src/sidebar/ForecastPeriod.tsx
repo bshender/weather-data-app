@@ -18,7 +18,7 @@ function Period({ period }: iProps) {
             <EntityTitle fill title={period.name} subtitle={period.shortForecast} icon={detailsIcon} />
             <div className="forecast-period">
                 <div>
-                    Temp: {period.temperature}F°<br />
+                    Temp: {period.temperature}°F<br />
                     Rain: {period.probabilityOfPrecipitation.value}%<br />
                     Wind: {period.windSpeed} {period.windDirection}<br />
                 </div>
